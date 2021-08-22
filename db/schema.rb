@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_22_040934) do
-
+ActiveRecord::Schema.define(version: 2021_08_22_195358) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
   enable_extension "plpgsql"
@@ -28,4 +27,13 @@ ActiveRecord::Schema.define(version: 2021_08_22_040934) do
     t.index ["username"], name: "index_twixies_on_username", unique: true
   end
 
+  create_table "twixts", force: :cascade do |t|
+    t.bigint "twixy_id", null: false
+    t.string "text"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["twixy_id"], name: "index_twixts_on_twixy_id"
+  end
+
+  add_foreign_key "twixts", "twixies"
 end

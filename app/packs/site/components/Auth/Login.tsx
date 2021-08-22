@@ -29,15 +29,17 @@ const Login = (): ReactElement => {
   }
 
   return (
-    <Fragment>
-      <h1>Login into Twixo!</h1>
-      <Form onSubmit={handleSubmit}>
-        <FormInputText changeHandler={handleTwixy} field="username" label="User name" />
-        <FormInputPassword changeHandler={handleTwixy} field="password" isNew={true} label="Password" />
-        <Button disabled={disable} variant="primary" type="submit">Login</Button>
-      </Form>
-      {status.user && <Redirect to="/" />}
-    </Fragment>
+    status.user
+      ? <Redirect to="/" />
+      : <Fragment>
+        <h1>Login into Twixo!</h1>
+        <Form onSubmit={handleSubmit}>
+          <FormInputText changeHandler={handleTwixy} field="username" label="User name" />
+          <FormInputPassword changeHandler={handleTwixy} field="password" isNew={true} label="Password" />
+          <Button disabled={disable} variant="primary" type="submit">Login</Button>
+        </Form>
+        <a href="/register">Register</a>
+      </Fragment>
   )
 }
 

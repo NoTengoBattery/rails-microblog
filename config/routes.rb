@@ -5,6 +5,7 @@ Rails.application.routes.draw do
         registrations: "users/registrations",
         sessions: "users/sessions"
       }
+      resource :twixt, only: %i[create]
     end
   end
   root "pages#index"
