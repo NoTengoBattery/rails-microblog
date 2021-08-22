@@ -20,5 +20,5 @@ class Twixy < ApplicationRecord
     presence: true,
     uniqueness: {case_sensitive: false}
 
-  has_many :twixts, dependent: destroy
+  has_many :twixts, dependent: :destroy
 end
