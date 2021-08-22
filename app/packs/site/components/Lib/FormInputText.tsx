@@ -10,7 +10,7 @@ export declare interface FormInputTextProps {
 }
 
 const FormInputText = ({ changeHandler, errors, field, label, muted }: FormInputTextProps): ReactElement => {
-  const myErrors = Object.prototype.hasOwnProperty.call(errors, field) ? errors[field] : []
+  const myErrors = errors && Object.prototype.hasOwnProperty.call(errors, field) ? errors[field] : []
   const errorFields = () => {
     const fields = []
     for (let i = 0; i < myErrors.length; i++) {

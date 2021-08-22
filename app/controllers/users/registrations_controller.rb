@@ -9,7 +9,7 @@ module Users
     private
 
     def configure_sign_up_params
-      devise_parameter_sanitizer.permit(:sign_up, keys: %i[full_name username])
+      devise_parameter_sanitizer.permit(:sign_up, keys: %i[email full_name username])
     end
 
     def respond_with(resource, opts = {})

@@ -15,12 +15,8 @@ const Register = (): ReactElement => {
     e.preventDefault()
     setDisable(true)
     AxiosWrapper.post('api/v1/twixies', { twixy })
-      .then(() => {
-        setSuccess(true)
-      })
-      .catch((ans) => {
-        setErrors(ans.response.data.errors)
-      })
+      .then(() => { setSuccess(true) })
+      .catch((ans) => { setErrors(ans.response.data.errors) })
     setDisable(false)
   }
 

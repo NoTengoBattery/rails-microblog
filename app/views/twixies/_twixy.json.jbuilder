@@ -1,1 +1,2 @@
-json.call(twixy, :full_name, :username)
+json.fullName twixy.full_name
+json.username twixy.username
