@@ -1,6 +1,9 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
+  # Settings specified here will take precedence over those in config/application.rb.
+
+  # Enable Bullet eager load optimization gem
   config.after_initialize do
     Bullet.enable = true
     Bullet.alert = true
@@ -9,8 +12,6 @@ Rails.application.configure do
     Bullet.rails_logger = true
     Bullet.add_footer = true
   end
-
-  # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded any time
   # it changes. This slows down response time but is perfect for development
@@ -39,16 +40,6 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
-  # Store uploaded files on the local file system (see config/storage.yml for options).
-  config.active_storage.service = :local
-
-  # Include generic and useful information about system operation.
-  config.log_level = :info
-
-  # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
-  config.action_mailer.perform_caching = false
-
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
@@ -64,6 +55,14 @@ Rails.application.configure do
   # Highlight code that triggered database queries in logs.
   config.active_record.verbose_query_logs = true
 
+  # Debug mode disables concatenation and preprocessing of assets.
+  # This option may cause significant delays in view rendering with a large
+  # number of complex assets.
+  # config.assets.debug = true
+
+  # Suppress logger output for asset requests.
+  # config.assets.quiet = true
+
   # Raises error for missing translations.
   config.i18n.raise_on_missing_translations = true
 
@@ -77,10 +76,6 @@ Rails.application.configure do
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
 
-  config.action_mailer.smtp_settings = {
-    address: AppConfig::Config::LOCAL_HOST,
-    port: 1025,
-    user_name: :user,
-    password: :password
-  }
+  # Allow HTML error for API application
+  config.debug_exception_response_format = :default
 end
