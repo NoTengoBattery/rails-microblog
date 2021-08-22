@@ -21,4 +21,8 @@ class Twixy < ApplicationRecord
     uniqueness: {case_sensitive: false}
 
   has_many :twixts, dependent: :destroy
+  has_many :received_follows, foreign_key: :followed_id, class_name: "Follow", dependent: :destroy, inverse_of: :follower
+  has_many :followers, through: :received_follows, source: :follower
+  has_many :sent_follows, foreign_key: :follower_id, class_name: "Follow", dependent: :destroy, inverse_of: :followed
+  has_many :followings, through: :sent_follows, source: :followed
 end

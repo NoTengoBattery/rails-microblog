@@ -13,3 +13,11 @@ Twixy.create({
   password: "trixie123",
   password_confirmation: "trixie123"
 })
+
+Twixy.create({
+  email: "tristan@tristan.com",
+  full_name: "Tristan",
+  username: "tristan",
+  password: "tristan123",
+  password_confirmation: "tristan123"
+})
