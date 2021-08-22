@@ -1,1 +1,1 @@
-json.(twixy, :full_name, :username)
+json.call(twixy, :full_name, :username)

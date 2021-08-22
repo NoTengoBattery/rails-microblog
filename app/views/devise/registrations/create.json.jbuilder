@@ -1,3 +1,3 @@
 json.twixy do |json|
-  json.partial! 'twixies/twixy', twixy: current_twixy
+  json.partial! "twixies/twixy", twixy: current_twixy
 end

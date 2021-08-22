@@ -13,11 +13,11 @@ module Users
     end
 
     def respond_with(resource, opts = {})
-    if resource.persisted?
+      if resource.persisted?
         render "devise/registrations/create"
-    else
-      super(resource, opts)
+      else
+        super(resource, opts)
+      end
     end
-  end
   end
 end
