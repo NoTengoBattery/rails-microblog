@@ -10,19 +10,21 @@ import React, {
 import AxiosWrapper from '../utils/Requests/AxiosWrapper'
 export interface User {
   fullName: string,
-  username: string
+  username: string,
+  following: number,
+  followers: number
 }
 
 export interface ApplicationStatus {
   user?: User
 }
 
-type Dispatch = React.Dispatch<React.SetStateAction<ApplicationStatus>>
+export type Dispatcher = React.Dispatch<React.SetStateAction<ApplicationStatus>>
 
 const ApplicationContext = createContext({})
 
 const ContextProvider = ({ children }: PropsWithChildren<ReactNode>): ReactElement => {
-  const [status, setStatus]: [ApplicationStatus, Dispatch] = useState({})
+  const [status, setStatus]: [ApplicationStatus, Dispatcher] = useState({})
   const stuff = () => { return [status, setStatus] }
   useEffect(() => {
     AxiosWrapper.post('api/v1/twixies/sign_in')
@@ -35,8 +37,8 @@ const ContextProvider = ({ children }: PropsWithChildren<ReactNode>): ReactEleme
   return (<ApplicationContext.Provider value={stuff()}>{children}</ApplicationContext.Provider>)
 }
 
-export const useStatus = (): [ApplicationStatus, Dispatch] => {
-  const context = useContext(ApplicationContext) as [ApplicationStatus, Dispatch]
+export const useStatus = (): [ApplicationStatus, Dispatcher] => {
+  const context = useContext(ApplicationContext) as [ApplicationStatus, Dispatcher]
   if (context === undefined) { throw new Error('useStatus can only be used inside ContextProvider') }
   return context
 }

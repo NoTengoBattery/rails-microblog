@@ -1,13 +1,16 @@
-import React, { ReactElement } from 'react'
-import { Button } from 'react-bootstrap'
+import React, { Dispatch, ReactElement } from 'react'
+import { ApplicationStatus, Dispatcher, useStatus } from '../ContextAPI/ContextProvider'
 import Guarded from '../Lib/Guarded'
+import UserCard from '../Lib/UserCard'
 
 const Twexts = (): ReactElement => {
+  const [status, setStatus]: [ApplicationStatus, Dispatcher] = useStatus()
   return (
-  <Guarded>
-    <h1>Twixo</h1>
-        <a href="/twixt">Write a twixt</a>
-  </Guarded>
+    <Guarded>
+      <h1>Twixo</h1>
+      <a href="/twixt">Write a twixt</a>
+      <UserCard user={status.user}></UserCard>
+    </Guarded>
   )
 }
 
