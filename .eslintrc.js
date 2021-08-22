@@ -4,17 +4,21 @@ module.exports = {
     es2020: true,
     jest: true
   },
+  plugins: ['react-hooks'],
   extends: [
-    'standard',
-    'eslint:recommended'
+    'eslint:recommended',
+    'plugin:react/jsx-runtime',
+    'plugin:react/recommended',
+    'standard'
   ],
   parser: '@babel/eslint-parser',
   parserOptions: {
-    ecmaVersion: 2020,
     ecmaFeatures: {
+      classes: false,
       impliedStrict: true,
-      classes: false
+      jsx: true
     },
+    ecmaVersion: 2020,
     sourceType: 'module'
   },
   ignorePatterns: [
@@ -24,21 +28,32 @@ module.exports = {
     'tmp/**/*',
     'vendor/bundle/**/*'
   ],
+  settings: {
+    react: {
+      version: 'detect'
+    }
+  },
   overrides: [
     {
-      files: [
-        '*.ts'
-      ],
+      files: ['**/*.ts', '**/*.tsx'],
       plugins: [
+        '@typescript-eslint',
+        'react-hooks',
         '@typescript-eslint',
         '@typescript-eslint/eslint-plugin'
       ],
       extends: [
-        'standard',
         'eslint:recommended',
-        'plugin:@typescript-eslint/recommended'
+        'plugin:@typescript-eslint/recommended',
+        'plugin:react/jsx-runtime',
+        'plugin:react/recommended',
+        'standard'
       ],
-      parser: '@typescript-eslint/parser'
+      parser: '@typescript-eslint/parser',
+      rules: {
+        'no-use-before-define': 'off',
+        '@typescript-eslint/no-use-before-define': ['error']
+      }
     }
   ]
 }

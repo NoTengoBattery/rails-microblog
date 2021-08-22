@@ -1,8 +1,8 @@
 module AppConfig
   class Config
-    FRIENDLY_HOST = :website_com
+    FRIENDLY_HOST = :twixo_com
     LOCAL_HOST = :"localhost.localdomain"
-    PRODUCTION_HOST = :"website.com"
+    PRODUCTION_HOST = :"twixo.com"
     PRODUCTION_TLD_LENGHT = 1
     REVIEW_TLD_LENGTH = 2
     STAGING_TLD_LENGTH = 2

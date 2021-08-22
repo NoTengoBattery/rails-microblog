@@ -5,12 +5,12 @@ ruby "~> 3.0"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem "rails", "~> 6.1", ">= 6.1.4"
+# Use postgresql as the database for Active Record
+gem "pg", "~> 1.2", ">= 1.2.3"
 # Use Puma as the app server
 gem "puma", "~> 5.4"
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem "webpacker", "6.0.0.rc.1"
-# Turbo makes navigating your web application faster.
-gem "turbo-rails", "~> 0.7"
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem "jbuilder", "~> 2.11", ">= 2.11.2"
 # Use Redis adapter to run Action Cable in production
@@ -26,7 +26,6 @@ gem "hamlit-rails", "~> 0.2"
 gem "image_processing", "~> 1.12", ">= 1.12.1"
 gem "irb", "~> 1.3", ">= 1.3.7"
 gem "kaminari", "~> 1.2", ">= 1.2.1"
-gem "pg", "~> 1.2", ">= 1.2.3"
 gem "rails-i18n", "~> 6.0"
 gem "resque", "~> 2.1"
 gem "rest-client", "~> 2.1"

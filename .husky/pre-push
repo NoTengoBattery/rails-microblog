@@ -1,25 +1,13 @@
 #!/bin/bash
+
+export MY_NAME=$(basename "$0")
 . "$(dirname "$0")/_/husky.sh"
+. "$(dirname "$0")/_hooks.sh"
 
-MY_NAME=$(basename "$0")
-
-_fail() {
-  ECODE=$?
-  printf "~~> $MY_NAME: $NAME: aborting...\n"
-  exit $ECODE
-}
-
-run_hook() {
-  command=("$@")
-  printf "~~> $MY_NAME: $NAME: running hook...\n"
-  "${command[@]}" || _fail
-  printf "~~> $MY_NAME: $NAME: hook executed successfully\n"
-}
-
-NAME="Rubocop" run_hook bundle exec rubocop --color --parallel
-NAME="ESLint" run_hook yarn eslint --color .
-NAME="TypeScript" run_hook yarn tsc-full
-NAME="HAML lint" run_hook bundle exec haml-lint --color --parallel
-NAME="Stylelint" run_hook yarn stylelint-all --color
-NAME="I18n Health" run_hook bundle exec i18n-tasks health
-NAME="RSpec" run_hook bundle exec rspec --force-color --format documentation
+FOR=Rubocop     run_program bundle exec rubocop --color --parallel
+FOR=ESLint      run_program yarn eslint --color .
+FOR=TypeScript  run_program yarn tsc-full
+FOR=HAML-Lint   run_program bundle exec haml-lint --color --parallel
+FOR=Stylelint   run_program yarn stylelint-all --color
+FOR=I18n-Health run_program bundle exec i18n-tasks health
+FOR=RSpec       run_program bundle exec rspec --force-color --format documentation
