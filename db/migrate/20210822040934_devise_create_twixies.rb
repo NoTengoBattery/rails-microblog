@@ -35,6 +35,7 @@ class DeviseCreateTwixies < ActiveRecord::Migration[6.1]
       # t.datetime :locked_at
 
       t.citext :username, null: false
+      t.string :full_name, null: false
 
       t.timestamps null: false
     end

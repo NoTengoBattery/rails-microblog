@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2021_08_22_040934) do
     t.string "encrypted_password", default: "", null: false
     t.datetime "remember_created_at"
     t.citext "username", null: false
+    t.string "full_name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_twixies_on_email", unique: true
