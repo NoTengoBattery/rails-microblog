@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react'
 
-const Twexts: React.FunctionComponent = (): ReactElement => {
+const Twexts = (): ReactElement => {
   return (<div/>)
 }
 

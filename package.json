@@ -24,6 +24,7 @@
     "@rails/ujs": "^6.1",
     "@rails/webpacker": "6.0.0-rc.1",
     "autoprefixer": "^10.3",
+    "axios": "^0.21",
     "bootstrap": "^5.1.0",
     "css-loader": "^6.2",
     "cssnano": "^5.0",
