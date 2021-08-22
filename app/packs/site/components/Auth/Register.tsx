@@ -35,6 +35,7 @@ const Register = (): ReactElement => {
         <FormInputPassword changeHandler={handleTwixy} errors={errors} field="password_confirmation" isNew={true} label="Password confirmation" />
         <Button disabled={disable} variant="primary" type="submit">Register</Button>
       </Form>
+      <a href="/login">Login</a>
       {success && <Redirect to="/" />}
     </Fragment>
   )

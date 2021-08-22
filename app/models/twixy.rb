@@ -19,4 +19,6 @@ class Twixy < ApplicationRecord
     length: Twixy::USERNAME_LENGTH,
     presence: true,
     uniqueness: {case_sensitive: false}
+
+  has_many :twixts, dependent: destroy
 end

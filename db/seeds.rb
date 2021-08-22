@@ -7,6 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Dir[Rails.root.join("db", "#{Rails.env}-seeds", "*.rb")].each do |file|
-  Rails.log.info("~~> Processing: #{File.basename(file)}")
+  Rails.logger.info("~~> Processing: #{File.basename(file)}")
   require file
 end
