@@ -9,7 +9,7 @@ const Twexts = (): ReactElement => {
     <Guarded>
       <h1>Twixo</h1>
       <a href="/twixt">Write a twixt</a>
-      <UserCard user={status.user}></UserCard>
+      <UserCard user={status.user} mine={true}></UserCard>
     </Guarded>
   )
 }

@@ -11,8 +11,10 @@ import AxiosWrapper from '../utils/Requests/AxiosWrapper'
 export interface User {
   fullName: string,
   username: string,
-  following: number,
-  followers: number
+  followings: number,
+  followers: number,
+  following?: boolean,
+  followed?: boolean,
 }
 
 export interface ApplicationStatus {

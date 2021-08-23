@@ -21,3 +21,15 @@ Twixy.create({
   password: "tristan123",
   password_confirmation: "tristan123"
 })
+
+15.times do
+  pass = Faker::Internet.password
+  user = Twixy.create({
+    email: Faker::Internet.email,
+    full_name: Faker::Artist.name,
+    username: Faker::Internet.username,
+    password: pass,
+    password_confirmation: pass
+  })
+  Follow.create({follower: Twixy.first, followed: user}) if user.persisted?
+end

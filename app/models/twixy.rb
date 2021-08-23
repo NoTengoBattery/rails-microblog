@@ -25,4 +25,8 @@ class Twixy < ApplicationRecord
   has_many :followers, through: :received_follows, source: :follower
   has_many :sent_follows, foreign_key: :follower_id, class_name: "Follow", dependent: :destroy, inverse_of: :followed
   has_many :followings, through: :sent_follows, source: :followed
+
+  def following?(user)
+    Follow.exists?(follower: self, followed: user)
+  end
 end
