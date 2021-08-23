@@ -6,6 +6,10 @@ Rails.application.routes.draw do
         sessions: "users/sessions"
       }
       resource :twixt, only: %i[create]
+      resource :follows, only: %i[create]
+      patch "/follows", action: :unfollow, controller: :follows
+      get "/following", action: :following, controller: :twixies
+      get "/followers", action: :followers, controller: :twixies
     end
   end
   root "pages#index"

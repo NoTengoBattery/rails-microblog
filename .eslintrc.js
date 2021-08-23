@@ -52,6 +52,7 @@ module.exports = {
       parser: '@typescript-eslint/parser',
       rules: {
         'no-use-before-define': 'off',
+        'no-unused-vars': 'off',
         '@typescript-eslint/no-use-before-define': ['error']
       }
     }
