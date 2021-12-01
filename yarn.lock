@@ -1057,10 +1057,10 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@popperjs/core@^2.9.2":
-  version "2.9.3"
-  resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.9.3.tgz#8b68da1ebd7fc603999cf6ebee34a4899a14b88e"
-  integrity sha512-xDu17cEfh7Kid/d95kB6tZsLOmSWKCZKtprnhVepjsSaCij+lM3mItSJDuuHDMbCWTh8Ejmebwb+KONcCJ0eXQ==
+"@popperjs/core@^2.10.1":
+  version "2.11.0"
+  resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.11.0.tgz#6734f8ebc106a0860dff7f92bf90df193f0935d7"
+  integrity sha512-zrsUxjLOKAzdewIDRWy9nsV1GQsKBCWaGwsZQlCgr6/q+vjyZhFgqedLfFBuI9anTPEUT4APq9Mu0SZBTzIcGQ==
 
 "@rails/ujs@^6.1":
   version "6.1.4"
@@ -1116,13 +1116,13 @@
   dependencies:
     dequal "^2.0.2"
 
-"@restart/ui@^0.2.1":
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/@restart/ui/-/ui-0.2.2.tgz#57067918a5ac5761848bb70a74aa020025cc91ce"
-  integrity sha512-PgNkiyOaWwx8ttQ45KNABXU3780fB/UxNFxcsCpC4RRAlaByZHHbNLOKfhuFs+ZUU0uLxEH9wYQEhDAZc6ajkA==
+"@restart/ui@^0.2.3":
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/@restart/ui/-/ui-0.2.3.tgz#8b68aa2ca07af799a65b288cc3c6039915c46a4c"
+  integrity sha512-FDhtjIR9QvUfMwvFsgVurRA1qdYxM0F0S07acywjG7gNI2YmQo78rtCYIe553V/pyBjEjaKAg3fzBFCocFTqyQ==
   dependencies:
     "@babel/runtime" "^7.13.16"
-    "@popperjs/core" "^2.9.2"
+    "@popperjs/core" "^2.10.1"
     "@react-aria/ssr" "^3.0.1"
     "@restart/hooks" "^0.4.0"
     "@types/warning" "^3.0.0"
@@ -6076,15 +6076,15 @@ raw-body@2.4.0:
     iconv-lite "0.4.24"
     unpipe "1.0.0"
 
-react-bootstrap@^2.0.0-beta.5:
-  version "2.0.0-beta.5"
-  resolved "https://registry.yarnpkg.com/react-bootstrap/-/react-bootstrap-2.0.0-beta.5.tgz#3bdb532cd8c13b360dd277102607e4ff7ca58013"
-  integrity sha512-vMRsO3akQ4utRZkMuWtJ82g0vOqzQUoHK7pZs7af3P7c43zrBWzFYM161aKBAIY6Kfhc9Wn2Ms7tZcdpc3pszA==
+react-bootstrap@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/react-bootstrap/-/react-bootstrap-2.0.3.tgz#a53ee96aa5e1c205d46e73ae78c374a43017df74"
+  integrity sha512-gIRzQf170SGKS09azr8Cl9+8FxBf3J9jyFf/8sWNWXtRcgbRzTog9bFCS4ua5Wv1U/A7W7hRlnrKxzy+wl+5Rw==
   dependencies:
     "@babel/runtime" "^7.14.0"
     "@restart/context" "^2.1.4"
     "@restart/hooks" "^0.3.26"
-    "@restart/ui" "^0.2.1"
+    "@restart/ui" "^0.2.3"
     "@types/invariant" "^2.2.33"
     "@types/prop-types" "^15.7.3"
     "@types/react" ">=16.14.8"
